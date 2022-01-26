@@ -1,4 +1,4 @@
-# reliable_udp
+# Reliable transmition using UDO
 A reliable implementation of udp protocol using ACK and NACK. Program consists of two main functions. receiveUDPMessage() and sendUDPMessage().
 Two threads are created for each 
 ```python
@@ -8,6 +8,7 @@ send = threading.Thread(target = sendUDPMessage)
 receive.start()
 send.start()
 ```
+## Sender side
 Sender asks user for a message to send then encodes the message and send it. if after 5 seconds no messages are received then closes the socket. if the received message is not '200-ok' then the message is not sent or the received ACK is corupted, so send the message again.
 ```python
         while(True):
@@ -24,6 +25,7 @@ Sender asks user for a message to send then encodes the message and send it. if 
             except:
                 print('Failed to send. Retrying...')
 ```
+## Reciever side
 On the reciever side if a message is received, send '200-ok' as a ACK to the sender of message.
  ```python
  #Show message details to user
