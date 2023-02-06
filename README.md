@@ -1,4 +1,4 @@
-# Reliable transmition using UDO
+# Reliable transmition using UDP
 A reliable implementation of udp protocol using ACK and NACK. Program consists of two main functions. receiveUDPMessage() and sendUDPMessage().
 Two threads are created for each 
 ```python
